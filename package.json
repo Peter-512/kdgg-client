@@ -4,12 +4,19 @@
   "author": "Peter Buschenreiter",
   "license": "MIT",
   "type": "module",
-  "dependencies": {
-  },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.43.0",
     "css-loader": "^6.7.3",
+    "eslint": "^8.39.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-standard-with-typescript": "^34.0.1",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
     "html-webpack-plugin": "^5.5.1",
     "mini-css-extract-plugin": "^2.7.5",
+    "tailwindcss": "^3.3.2",
+    "typescript": "*",
     "webpack": "^5.80.0",
     "webpack-cli": "^5.0.2",
     "webpack-dev-server": "^4.13.3"

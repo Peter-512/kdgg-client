@@ -3,7 +3,7 @@
     "browser": true,
     "es2021": true
   },
-  "extends": "standard-with-typescript",
+  "extends": "airbnb-base",
   "overrides": [
   ],
   "parserOptions": {
@@ -11,5 +11,40 @@
     "sourceType": "module"
   },
   "rules": {
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
+    "import/extensions": [
+      "error",
+      "always"
+    ],
+    "import/prefer-default-export": "off",
+    "indent": [
+      "error",
+      4,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "no-console": "off",
+    "no-restricted-syntax": [
+      "error",
+      "ForInStatement"
+    ],
+    "no-trailing-spaces": "error",
+    "no-undef": "error",
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "never"
+    ]
   }
 }
