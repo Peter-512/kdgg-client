@@ -1,13 +1,37 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-		  name="viewport">
-	<meta content="ie=edge" http-equiv="X-UA-Compatible">
-	<title>Chat-app Client</title>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>kdGG</title>
 </head>
 <body>
-<h1>Hi guys</h1>
+<nav class="navbar navbar-expand-sm navbar-dark bg-black">
+    <div class="container-fluid">
+        <button aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler text-success"
+                data-bs-target="#navbarToggler" data-bs-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggler">
+            <a class="navbar-brand" href="">kdGG</a>
+            <ul class="navbar-nav me-auto mb-lg-0">
+                <li class="nav-item">
+                    <a aria-current="page" class="nav-link active" id="home-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a aria-current="page" class="nav-link" id="add-link">Add</a>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input aria-label="Search" class="form-control me-2" placeholder="Search" type="search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+<main class="d-flex flex-wrap"></main>
 </body>
 </html>
