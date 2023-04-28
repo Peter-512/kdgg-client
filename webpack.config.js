@@ -57,8 +57,8 @@ const config = {
     },
     devServer: {
         static: { directory: path.resolve('dist') },
-        hot: false, // optional, but don't enable hot _and_ liveReload together
-        liveReload: true,
+        hot: true, // optional, but don't enable hot _and_ liveReload together
+        liveReload: false,
         open: true,
         port: 9000
     }
