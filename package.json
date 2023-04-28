@@ -23,7 +23,6 @@
     "sass": "^1.62.1",
     "sass-loader": "^13.2.2",
     "source-map-loader": "^4.0.0",
-    "tailwindcss": "^3.3.2",
     "ts-loader": "^9.4.0",
     "typescript": "^5.0.4",
     "webpack": "^5.80.0",
