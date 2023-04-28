@@ -1,11 +1,27 @@
-$primary: aquamarine;
-$secondary: #9d9d9d;
-$success: #38f865;
-$danger: #780e17;
-$warning: #7b6630;
+@import "variables";
+@import 'bootstrap';
 
 body {
   background-color: $primary;
 }
 
-@import "../../node_modules/bootstrap/scss/bootstrap";
+
+.card {
+  max-width: 15rem;
+}
+
+.nav-link {
+  text-decoration: underline;
+  color: $primary;
+  cursor: pointer;
+}
+
+nav {
+  div {
+    button {
+      span {
+        color: $success;
+      }
+    }
+  }
+}
