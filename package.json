@@ -4,8 +4,13 @@
   "author": "Peter Buschenreiter",
   "license": "MIT",
   "type": "module",
+  "dependencies": {
+    "@popperjs/core": "^2.11.7",
+    "bootstrap": "^5.2.3"
+  },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.43.0",
+    "@typescript-eslint/parser": "^5.43.0",
     "css-loader": "^6.7.3",
     "eslint": "^8.39.0",
     "eslint-config-airbnb-base": "^15.0.0",
@@ -15,8 +20,12 @@
     "eslint-plugin-promise": "^6.0.0",
     "html-webpack-plugin": "^5.5.1",
     "mini-css-extract-plugin": "^2.7.5",
+    "sass": "^1.62.1",
+    "sass-loader": "^13.2.2",
+    "source-map-loader": "^4.0.0",
     "tailwindcss": "^3.3.2",
-    "typescript": "*",
+    "ts-loader": "^9.4.0",
+    "typescript": "^5.0.4",
     "webpack": "^5.80.0",
     "webpack-cli": "^5.0.2",
     "webpack-dev-server": "^4.13.3"

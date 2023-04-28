@@ -1,0 +1,11 @@
+$primary: aquamarine;
+$secondary: #9d9d9d;
+$success: #38f865;
+$danger: #780e17;
+$warning: #7b6630;
+
+body {
+  background-color: $primary;
+}
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
