@@ -1,0 +1,21 @@
+{
+  "name": "chat-app-client",
+  "version": "1.0.0",
+  "author": "Peter Buschenreiter",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "css-loader": "^6.7.3",
+    "html-webpack-plugin": "^5.5.1",
+    "mini-css-extract-plugin": "^2.7.5",
+    "webpack": "^5.80.0",
+    "webpack-cli": "^5.0.2",
+    "webpack-dev-server": "^4.13.3"
+  },
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack serve"
+  }
+}
