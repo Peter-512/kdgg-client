@@ -10,18 +10,20 @@ body {
   max-width: 15rem;
 }
 
+
 .nav-link {
-  text-decoration: underline;
-  color: $primary;
+  &.active {
+    text-decoration: underline;
+  }
+
+  color: $success;
   cursor: pointer;
 }
 
-nav {
-  div {
-    button {
-      span {
-        color: $success;
-      }
-    }
+.card-title {
+  .badge {
+    text-transform: capitalize;
+    background-color: black;
+    box-shadow: 0 0 12px 4px;
   }
 }
