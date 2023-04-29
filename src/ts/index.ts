@@ -3,26 +3,26 @@ import 'bootstrap'
 import { showUsers } from './users'
 import { showPosts } from './posts'
 
-const homeLink = document.querySelector('#home-link')
-const addLink = document.querySelector('#add-link')
+const usersLink = document.querySelector('#users-link')
+const postLink = document.querySelector('#posts-link')
 
-if (!homeLink || !addLink) throw new Error('No links found')
+if (!usersLink || !postLink) throw new Error('No links found')
 
 await showUsers()
-let currentPage = 'home'
+let currentPage: 'users' | 'posts' = 'users'
 
-homeLink.addEventListener('click', async () => {
-    if (currentPage === 'home') return
-    currentPage = 'home'
-    addLink.classList.remove('active')
-    homeLink.classList.add('active')
+usersLink.addEventListener('click', async () => {
+    if (currentPage === 'users') return
+    currentPage = 'users'
+    postLink.classList.remove('active')
+    usersLink.classList.add('active')
     await showUsers()
 })
 
-addLink.addEventListener('click', async () => {
-    if (currentPage === 'add') return
-    currentPage = 'add'
-    homeLink.classList.remove('active')
-    addLink.classList.add('active')
+postLink.addEventListener('click', async () => {
+    if (currentPage === 'posts') return
+    currentPage = 'posts'
+    usersLink.classList.remove('active')
+    postLink.classList.add('active')
     await showPosts()
 })
