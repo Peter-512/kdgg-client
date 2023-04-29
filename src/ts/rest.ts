@@ -1,18 +1,4 @@
-interface User {
-    userID: number,
-    name: string,
-    birthdate: Date,
-    role: string,
-}
-
-interface Post {
-    postID: number,
-    content: string,
-    postedAt: Date,
-    userId: number,
-    username: string,
-    upVotes: number,
-}
+import { Post, User } from './types'
 
 export const fetchUsers = async (): Promise<User[]> => {
     const res = await fetch('http://localhost:8081/api/users')
