@@ -8,7 +8,7 @@
     <title>kdGG</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-sm navbar-dark bg-black">
+<nav class="navbar navbar-expand-md navbar-dark bg-black">
     <div class="container-fluid">
         <button aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation"
                 class="navbar-toggler text-success"
@@ -24,14 +24,24 @@
                 <li class="nav-item">
                     <a aria-current="page" class="nav-link" id="posts-link">Posts</a>
                 </li>
+                <li class="nav-item">
+                    <a aria-current="page" class="nav-link" id="add-link">Add Channel</a>
+                </li>
+                <li class="nav-item">
+                    <a aria-current="page" class="nav-link" id="search-link">Search</a>
+                </li>
             </ul>
             <form class="d-flex" role="search">
-                <input aria-label="Search" class="form-control me-2" placeholder="Search" type="search">
+                <input aria-label="Search" class="form-control me-2" id="search-bar" placeholder="Search"
+                       type="search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
         </div>
     </div>
 </nav>
 <main class="d-flex flex-wrap"></main>
+<div class="position-absolute bottom-0 end-0 p-3" style="z-index: 1100">
+    <div class="toast-container position-static"></div>
+</div>
 </body>
 </html>

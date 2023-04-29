@@ -1,22 +1,19 @@
 import { fetchPosts } from './rest'
 import clearElement from './util/clear'
 import PostCard from './components/PostCard'
+import LoadingIndicator from './components/LoadingIndicator'
 
 export async function showPosts() {
     const main = document.querySelector('main')
     if (!main) throw new Error('No main element found')
 
     clearElement(main)
-
-    main.innerHTML = `
-    <div class="spinner-grow position-absolute top-50 start-50 text-success" style="width: 3rem; height: 3rem;" role="status">
-        <span class="visually-hidden">Loading...</span>
-    </div>`
+    main.append(new LoadingIndicator())
 
     const posts = await fetchPosts()
     clearElement(main)
 
-    for (const post of posts) {
+    posts.map(post => {
         main.append(new PostCard(post))
-    }
+    })
 }

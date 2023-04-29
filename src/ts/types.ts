@@ -13,3 +13,13 @@ export interface Post {
     username: string,
     upVotes: number,
 }
+
+export type bootstrapColorVariant =
+    'primary'
+    | 'secondary'
+    | 'success'
+    | 'danger'
+    | 'warning'
+    | 'info'
+    | 'light'
+    | 'dark'
