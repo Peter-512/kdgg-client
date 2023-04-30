@@ -23,3 +23,33 @@ export type bootstrapColorVariant =
     | 'info'
     | 'light'
     | 'dark'
+
+export interface Channel {
+    channelID: number,
+    name: string,
+    description: string,
+}
+
+export interface ResponseError {
+    error: string,
+    errors: {
+        arguments: {
+            arguments: null,
+            code: string,
+            codes: string[],
+            defaultMessage: string,
+        }[],
+        bindingFailure: boolean,
+        code: string,
+        codes: string[],
+        defaultMessage: string,
+        field: string,
+        objectName: string,
+        rejectedValue: string,
+    }[],
+    message: string,
+    path: string,
+    status: number,
+    timestamp: string,
+    trace: string
+}

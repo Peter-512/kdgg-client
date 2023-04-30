@@ -1,6 +1,7 @@
 import clearElement from './util/clear'
 import { Toast } from 'bootstrap'
-import { type bootstrapColorVariant } from './types'
+import { type bootstrapColorVariant, Channel, ResponseError } from './types'
+import { fetchChannels } from './rest'
 
 export function createToast(type: bootstrapColorVariant, header: string, body: string) {
     const toastContainer = document.querySelector('.toast-container')
@@ -22,6 +23,13 @@ export function createToast(type: bootstrapColorVariant, header: string, body: s
         toastContainer,
         toastElement
     }
+}
+
+const removeErrorLabels = () => {
+    const errorLabels = document.querySelectorAll('.is-invalid')
+    errorLabels.forEach(label => {
+        label.classList.remove('is-invalid')
+    })
 }
 
 export async function showAdd() {
@@ -67,27 +75,21 @@ export async function showAdd() {
 
     submit.addEventListener('click', async (e) => {
         e.preventDefault()
-        const res = await fetch('http://localhost:8081/api/channels', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify({
-                name: channelName.value,
-                description: description.value
-            })
-        })
+        const res = await fetchChannels(channelName.value, description.value)
 
         if (res.status === 200) {
-            const data = await res.json()
+            const data: Channel = await res.json()
             console.log(data)
+
+            removeErrorLabels()
+
             channelName.value = ''
             description.value = ''
             const {
                 toastContainer,
                 toastElement
-            } = createToast('success', 'Yaaayyyyy', 'Channel was added successfully')
+            } = createToast('success', 'Channel was added successfully',
+                `Channel name: ${data.name} <br> Channel description: ${data.description}`)
 
             if (!toastContainer) throw new Error('No toast container found')
             toastContainer.appendChild(toastElement)
@@ -96,24 +98,32 @@ export async function showAdd() {
         }
 
         if (res.status === 400) {
-            const data = await res.json()
-            console.log(data)
+            const data: ResponseError = await res.json()
+
+            removeErrorLabels()
+
+            const errors: string[] = []
+
             for (const input of inputs) {
-                data.errors.map((error: any) => {
+                data.errors.map((error) => {
                     if (error.field === input.id) {
                         input.classList.add('is-invalid')
+                        errors.push(error.defaultMessage)
                     }
                 })
             }
-            const {
-                toastContainer,
-                toastElement
-            } = createToast('danger', 'Something went wrong...', 'Please try again')
 
-            if (!toastContainer) throw new Error('No toast container found')
-            toastContainer.appendChild(toastElement)
-            const toast = new Toast(toastElement)
-            toast.isShown() || toast.show()
+            errors.map(error => {
+                const {
+                    toastContainer,
+                    toastElement
+                } = createToast('danger', 'Something went wrong...', error)
+
+                if (!toastContainer) throw new Error('No toast container found')
+                toastContainer.appendChild(toastElement)
+                const toast = new Toast(toastElement)
+                toast.isShown() || toast.show()
+            })
         }
     })
 }
